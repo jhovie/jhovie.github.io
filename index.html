@@ -97,6 +97,7 @@
 
 		</div><!-- End Of Content DIV -->
 	</div>
+	<script>
 	var cb = function() {
         var b = document.createElement('link'); 
         b.rel = 'stylesheet';
@@ -121,5 +122,6 @@
           webkitRequestAnimationFrame || msRequestAnimationFrame;
       if (raf) raf(cb);
       else window.addEventListener('load', cb);
+      </script>
 </body>
 </html>
