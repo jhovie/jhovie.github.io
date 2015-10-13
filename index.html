@@ -92,13 +92,34 @@
 						</div>
 					</div>
 				</div>
-				<link rel="stylesheet" href="stylesheets/bootstrap.css">
-				<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
-				<link href='https://fonts.googleapis.com/css?family=Merriweather:900' rel='stylesheet' type='text/css'>
-				<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+				
 			</div><!-- End Of About Section -->
 
 		</div><!-- End Of Content DIV -->
 	</div>
+	var cb = function() {
+        var b = document.createElement('link'); 
+        b.rel = 'stylesheet';
+        b.href = 'stylesheets/bootstrap.css';
+        var s = document.createElement('link'); 
+        s.rel = 'stylesheet';
+        s.href = 'stylesheets/stylesheet.css';
+        var f1 = document.createElement('link'); 
+        f1.rel = 'stylesheet'; f1.type='text/css';
+        f1.href = 'https://fonts.googleapis.com/css?family=Merriweather:900';
+        var f2 = document.createElement('link'); 
+        f2.rel = 'stylesheet'; f2.type='text/css';
+        f2.href = 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+        var h = document.getElementsByTagName('head')[0];
+         h.parentNode.insertBefore(f1, h);
+         h.parentNode.insertBefore(f2, h); 
+         h.parentNode.insertBefore(b, h);
+         h.parentNode.insertBefore(s, h);
+
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
 </body>
 </html>
